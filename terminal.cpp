@@ -1,4 +1,4 @@
-#include "terminal.h"
+#include "terminal.hpp"
 
 void terminal::backspace(int n) const {
 	for (int i = 0; i < n; ++i) printf("\b");
@@ -210,13 +210,4 @@ terminal::terminal(const string& _notice): notice(_notice), end_of_file(false) {
     front.clear();
     behind.clear();
     cur = history.cend();
-}
-
-int main(void) {
-	terminal t(">>>");
-	while (!t.eof()) {
-		string s = t.wait();
-		cout << "-- " << s << endl;
-	}
-	return 0;
 }
